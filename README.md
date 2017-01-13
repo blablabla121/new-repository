@@ -2,12 +2,11 @@
 
 The dependencies I used are the following:
 
- <properties>
-        <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+
         <neo4j.version>2.3.3</neo4j.version>
         <neo4j.ogm.version>2.0.6</neo4j.ogm.version>
         <ogm.properties>ogm-http.properties</ogm.properties>
-    </properties>
+   
 
 
         <dependencies>
