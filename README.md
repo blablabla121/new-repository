@@ -15,11 +15,11 @@ The dependencies I used are the following:
         <artifactId>spring-data-neo4j</artifactId>
         <version>4.1.6.RELEASE</version>
 		</dependency>
-<dependency>
-    <groupId>org.neo4j</groupId>
-    <artifactId>neo4j</artifactId>
-    <version>2.3.3</version>
-</dependency>
+	<dependency>
+    		<groupId>org.neo4j</groupId>
+    		<artifactId>neo4j</artifactId>
+    		<version>2.3.3</version>
+	</dependency>
 
 
             <dependency>
