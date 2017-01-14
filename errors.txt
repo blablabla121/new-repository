@@ -1,0 +1,298 @@
+ringframework.context.event.internalEventListenerFactory,neo4jConfig,org.springf
+ramework.context.annotation.ConfigurationClassPostProcessor.importAwareProcessor
+,org.springframework.context.annotation.ConfigurationClassPostProcessor.enhanced
+ConfigurationProcessor,org.springframework.transaction.annotation.ProxyTransacti
+onManagementConfiguration,org.springframework.transaction.config.internalTransac
+tionAdvisor,transactionAttributeSource,transactionInterceptor,org.springframewor
+k.transaction.config.internalTransactionalEventListenerFactory,getConfiguration,
+getSession,neo4jTemplate,getSessionFactory,persistenceExceptionTranslationPostPr
+ocessor,persistenceExceptionTranslator,transactionManager,translationInterceptor
+,neo4jMappingContext,org.springframework.aop.config.internalAutoProxyCreator]; r
+oot of factory hierarchy
+Exception in thread "main" java.lang.reflect.InvocationTargetException
+        at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+        at sun.reflect.NativeMethodAccessorImpl.invoke(Unknown Source)
+        at sun.reflect.DelegatingMethodAccessorImpl.invoke(Unknown Source)
+        at java.lang.reflect.Method.invoke(Unknown Source)
+        at org.springframework.boot.loader.MainMethodRunner.run(MainMethodRunner
+.java:54)
+        at java.lang.Thread.run(Unknown Source)
+Caused by: org.springframework.beans.factory.BeanCreationException: Error creati
+ng bean with name 'getSession' defined in com.prg.wikixtractor.Neo4jConfig: Bean
+ instantiation via factory method failed; nested exception is org.springframewor
+k.beans.BeanInstantiationException: Failed to instantiate [org.neo4j.ogm.session
+.Session]: Factory method 'getSession' threw exception; nested exception is java
+.lang.RuntimeException: java.lang.RuntimeException: Error starting org.neo4j.ker
+nel.impl.factory.CommunityFacadeFactory, F:\databaseTest
+        at org.springframework.beans.factory.support.ConstructorResolver.instant
+iateUsingFactoryMethod(ConstructorResolver.java:599)
+        at org.springframework.beans.factory.support.AbstractAutowireCapableBean
+Factory.instantiateUsingFactoryMethod(AbstractAutowireCapableBeanFactory.java:11
+23)
+        at org.springframework.beans.factory.support.AbstractAutowireCapableBean
+Factory.createBeanInstance(AbstractAutowireCapableBeanFactory.java:1018)
+        at org.springframework.beans.factory.support.AbstractAutowireCapableBean
+Factory.doCreateBean(AbstractAutowireCapableBeanFactory.java:510)
+        at org.springframework.beans.factory.support.AbstractAutowireCapableBean
+Factory.createBean(AbstractAutowireCapableBeanFactory.java:482)
+        at org.springframework.beans.factory.support.AbstractBeanFactory$1.getOb
+ject(AbstractBeanFactory.java:306)
+        at org.springframework.beans.factory.support.DefaultSingletonBeanRegistr
+y.getSingleton(DefaultSingletonBeanRegistry.java:230)
+        at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBe
+an(AbstractBeanFactory.java:302)
+        at org.springframework.beans.factory.support.AbstractBeanFactory.getBean
+(AbstractBeanFactory.java:197)
+        at org.springframework.beans.factory.support.DefaultListableBeanFactory.
+preInstantiateSingletons(DefaultListableBeanFactory.java:772)
+        at org.springframework.context.support.AbstractApplicationContext.finish
+BeanFactoryInitialization(AbstractApplicationContext.java:839)
+        at org.springframework.context.support.AbstractApplicationContext.refres
+h(AbstractApplicationContext.java:538)
+        at org.springframework.context.annotation.AnnotationConfigApplicationCon
+text.<init>(AnnotationConfigApplicationContext.java:84)
+        at com.prg.wikixtractor.Console.main(Console.java:69)
+        ... 6 more
+Caused by: org.springframework.beans.BeanInstantiationException: Failed to insta
+ntiate [org.neo4j.ogm.session.Session]: Factory method 'getSession' threw except
+ion; nested exception is java.lang.RuntimeException: java.lang.RuntimeException:
+ Error starting org.neo4j.kernel.impl.factory.CommunityFacadeFactory, F:\databas
+eTest
+        at org.springframework.beans.factory.support.SimpleInstantiationStrategy
+.instantiate(SimpleInstantiationStrategy.java:189)
+        at org.springframework.beans.factory.support.ConstructorResolver.instant
+iateUsingFactoryMethod(ConstructorResolver.java:588)
+        ... 19 more
+Caused by: java.lang.RuntimeException: java.lang.RuntimeException: Error startin
+g org.neo4j.kernel.impl.factory.CommunityFacadeFactory, F:\databaseTest
+        at org.neo4j.ogm.drivers.embedded.driver.EmbeddedDriver.configure(Embedd
+edDriver.java:102)
+        at org.neo4j.ogm.service.DriverService.load(DriverService.java:64)
+        at org.neo4j.ogm.service.Components.loadDriver(Components.java:128)
+        at org.neo4j.ogm.service.Components.driver(Components.java:86)
+        at org.neo4j.ogm.session.SessionFactory.openSession(SessionFactory.java:
+79)
+        at org.springframework.data.neo4j.config.Neo4jConfiguration.getSession(N
+eo4jConfiguration.java:56)
+        at com.prg.wikixtractor.Neo4jConfig.getSession(Neo4jConfig.java:57)
+        at com.prg.wikixtractor.Neo4jConfig$$EnhancerBySpringCGLIB$$272fe6f3.CGL
+IB$getSession$1(<generated>)
+        at com.prg.wikixtractor.Neo4jConfig$$EnhancerBySpringCGLIB$$272fe6f3$$Fa
+stClassBySpringCGLIB$$76c5ae49.invoke(<generated>)
+        at org.springframework.cglib.proxy.MethodProxy.invokeSuper(MethodProxy.j
+ava:228)
+        at org.springframework.context.annotation.ConfigurationClassEnhancer$Bea
+nMethodInterceptor.intercept(ConfigurationClassEnhancer.java:355)
+        at com.prg.wikixtractor.Neo4jConfig$$EnhancerBySpringCGLIB$$272fe6f3.get
+Session(<generated>)
+        at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+        at sun.reflect.NativeMethodAccessorImpl.invoke(Unknown Source)
+        at sun.reflect.DelegatingMethodAccessorImpl.invoke(Unknown Source)
+        at java.lang.reflect.Method.invoke(Unknown Source)
+        at org.springframework.beans.factory.support.SimpleInstantiationStrategy
+.instantiate(SimpleInstantiationStrategy.java:162)
+        ... 20 more
+Caused by: java.lang.RuntimeException: Error starting org.neo4j.kernel.impl.fact
+ory.CommunityFacadeFactory, F:\databaseTest
+        at org.neo4j.kernel.impl.factory.GraphDatabaseFacadeFactory.newFacade(Gr
+aphDatabaseFacadeFactory.java:143)
+        at org.neo4j.kernel.impl.factory.CommunityFacadeFactory.newFacade(Commun
+ityFacadeFactory.java:43)
+        at org.neo4j.kernel.impl.factory.GraphDatabaseFacadeFactory.newFacade(Gr
+aphDatabaseFacadeFactory.java:108)
+        at org.neo4j.graphdb.factory.GraphDatabaseFactory.newDatabase(GraphDatab
+aseFactory.java:129)
+        at org.neo4j.graphdb.factory.GraphDatabaseFactory$1.newDatabase(GraphDat
+abaseFactory.java:117)
+        at org.neo4j.graphdb.factory.GraphDatabaseBuilder.newGraphDatabase(Graph
+DatabaseBuilder.java:185)
+        at org.neo4j.graphdb.factory.GraphDatabaseFactory.newEmbeddedDatabase(Gr
+aphDatabaseFactory.java:79)
+        at org.neo4j.ogm.drivers.embedded.driver.EmbeddedDriver.configure(Embedd
+edDriver.java:98)
+        ... 36 more
+Caused by: org.neo4j.kernel.lifecycle.LifecycleException: Component 'org.neo4j.k
+ernel.recovery.Recovery@656ab2c' failed to initialize. Please see attached cause
+ exception.
+        at org.neo4j.kernel.lifecycle.LifeSupport$LifecycleInstance.init(LifeSup
+port.java:434)
+        at org.neo4j.kernel.lifecycle.LifeSupport.init(LifeSupport.java:66)
+        at org.neo4j.kernel.lifecycle.LifeSupport.start(LifeSupport.java:102)
+        at org.neo4j.kernel.NeoStoreDataSource.start(NeoStoreDataSource.java:600
+)
+        at org.neo4j.kernel.lifecycle.LifeSupport$LifecycleInstance.start(LifeSu
+pport.java:452)
+        at org.neo4j.kernel.lifecycle.LifeSupport.start(LifeSupport.java:111)
+        at org.neo4j.kernel.impl.transaction.state.DataSourceManager.start(DataS
+ourceManager.java:112)
+        at org.neo4j.kernel.lifecycle.LifeSupport$LifecycleInstance.start(LifeSu
+pport.java:452)
+        at org.neo4j.kernel.lifecycle.LifeSupport.start(LifeSupport.java:111)
+        at org.neo4j.kernel.impl.factory.GraphDatabaseFacadeFactory.newFacade(Gr
+aphDatabaseFacadeFactory.java:139)
+        ... 43 more
+Caused by: java.lang.IllegalArgumentException: Unrecognized log entry version -8
+ and logHeaderFormatVersion -1. At position LogPosition{logVersion=0, byteOffset
+=1044} and entry version null
+        at org.neo4j.kernel.impl.transaction.log.entry.LogEntryVersion.byVersion
+(LogEntryVersion.java:263)
+        at org.neo4j.kernel.impl.transaction.log.entry.VersionAwareLogEntryReade
+r.readLogEntry(VersionAwareLogEntryReader.java:91)
+        at org.neo4j.kernel.impl.transaction.log.LogEntryCursor.next(LogEntryCur
+sor.java:54)
+        at org.neo4j.kernel.recovery.LatestCheckPointFinder.find(LatestCheckPoin
+tFinder.java:77)
+        at org.neo4j.kernel.recovery.PositionToRecoverFrom.apply(PositionToRecov
+erFrom.java:53)
+        at org.neo4j.kernel.recovery.DefaultRecoverySPI.getPositionToRecoverFrom
+(DefaultRecoverySPI.java:135)
+        at org.neo4j.kernel.recovery.Recovery.init(Recovery.java:72)
+        at org.neo4j.kernel.lifecycle.LifeSupport$LifecycleInstance.init(LifeSup
+port.java:424)
+        ... 52 more
+Exception in thread "main" java.lang.RuntimeException: java.lang.reflect.Invocat
+ionTargetException
+        at org.springframework.boot.loader.MainMethodRunner.run(MainMethodRunner
+.java:62)
+        at java.lang.Thread.run(Unknown Source)
+Caused by: java.lang.reflect.InvocationTargetException
+        at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+        at sun.reflect.NativeMethodAccessorImpl.invoke(Unknown Source)
+        at sun.reflect.DelegatingMethodAccessorImpl.invoke(Unknown Source)
+        at java.lang.reflect.Method.invoke(Unknown Source)
+        at org.springframework.boot.loader.MainMethodRunner.run(MainMethodRunner
+.java:54)
+        ... 1 more
+Caused by: org.springframework.beans.factory.BeanCreationException: Error creati
+ng bean with name 'getSession' defined in com.prg.wikixtractor.Neo4jConfig: Bean
+ instantiation via factory method failed; nested exception is org.springframewor
+k.beans.BeanInstantiationException: Failed to instantiate [org.neo4j.ogm.session
+.Session]: Factory method 'getSession' threw exception; nested exception is java
+.lang.RuntimeException: java.lang.RuntimeException: Error starting org.neo4j.ker
+nel.impl.factory.CommunityFacadeFactory, F:\databaseTest
+        at org.springframework.beans.factory.support.ConstructorResolver.instant
+iateUsingFactoryMethod(ConstructorResolver.java:599)
+        at org.springframework.beans.factory.support.AbstractAutowireCapableBean
+Factory.instantiateUsingFactoryMethod(AbstractAutowireCapableBeanFactory.java:11
+23)
+        at org.springframework.beans.factory.support.AbstractAutowireCapableBean
+Factory.createBeanInstance(AbstractAutowireCapableBeanFactory.java:1018)
+        at org.springframework.beans.factory.support.AbstractAutowireCapableBean
+Factory.doCreateBean(AbstractAutowireCapableBeanFactory.java:510)
+        at org.springframework.beans.factory.support.AbstractAutowireCapableBean
+Factory.createBean(AbstractAutowireCapableBeanFactory.java:482)
+        at org.springframework.beans.factory.support.AbstractBeanFactory$1.getOb
+ject(AbstractBeanFactory.java:306)
+        at org.springframework.beans.factory.support.DefaultSingletonBeanRegistr
+y.getSingleton(DefaultSingletonBeanRegistry.java:230)
+        at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBe
+an(AbstractBeanFactory.java:302)
+        at org.springframework.beans.factory.support.AbstractBeanFactory.getBean
+(AbstractBeanFactory.java:197)
+        at org.springframework.beans.factory.support.DefaultListableBeanFactory.
+preInstantiateSingletons(DefaultListableBeanFactory.java:772)
+        at org.springframework.context.support.AbstractApplicationContext.finish
+BeanFactoryInitialization(AbstractApplicationContext.java:839)
+        at org.springframework.context.support.AbstractApplicationContext.refres
+h(AbstractApplicationContext.java:538)
+        at org.springframework.context.annotation.AnnotationConfigApplicationCon
+text.<init>(AnnotationConfigApplicationContext.java:84)
+        at com.prg.wikixtractor.Console.main(Console.java:69)
+        ... 6 more
+Caused by: org.springframework.beans.BeanInstantiationException: Failed to insta
+ntiate [org.neo4j.ogm.session.Session]: Factory method 'getSession' threw except
+ion; nested exception is java.lang.RuntimeException: java.lang.RuntimeException:
+ Error starting org.neo4j.kernel.impl.factory.CommunityFacadeFactory, F:\databas
+eTest
+        at org.springframework.beans.factory.support.SimpleInstantiationStrategy
+.instantiate(SimpleInstantiationStrategy.java:189)
+        at org.springframework.beans.factory.support.ConstructorResolver.instant
+iateUsingFactoryMethod(ConstructorResolver.java:588)
+        ... 19 more
+Caused by: java.lang.RuntimeException: java.lang.RuntimeException: Error startin
+g org.neo4j.kernel.impl.factory.CommunityFacadeFactory, F:\databaseTest
+        at org.neo4j.ogm.drivers.embedded.driver.EmbeddedDriver.configure(Embedd
+edDriver.java:102)
+        at org.neo4j.ogm.service.DriverService.load(DriverService.java:64)
+        at org.neo4j.ogm.service.Components.loadDriver(Components.java:128)
+        at org.neo4j.ogm.service.Components.driver(Components.java:86)
+        at org.neo4j.ogm.session.SessionFactory.openSession(SessionFactory.java:
+79)
+        at org.springframework.data.neo4j.config.Neo4jConfiguration.getSession(N
+eo4jConfiguration.java:56)
+        at com.prg.wikixtractor.Neo4jConfig.getSession(Neo4jConfig.java:57)
+        at com.prg.wikixtractor.Neo4jConfig$$EnhancerBySpringCGLIB$$272fe6f3.CGL
+IB$getSession$1(<generated>)
+        at com.prg.wikixtractor.Neo4jConfig$$EnhancerBySpringCGLIB$$272fe6f3$$Fa
+stClassBySpringCGLIB$$76c5ae49.invoke(<generated>)
+        at org.springframework.cglib.proxy.MethodProxy.invokeSuper(MethodProxy.j
+ava:228)
+        at org.springframework.context.annotation.ConfigurationClassEnhancer$Bea
+nMethodInterceptor.intercept(ConfigurationClassEnhancer.java:355)
+        at com.prg.wikixtractor.Neo4jConfig$$EnhancerBySpringCGLIB$$272fe6f3.get
+Session(<generated>)
+        at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+        at sun.reflect.NativeMethodAccessorImpl.invoke(Unknown Source)
+        at sun.reflect.DelegatingMethodAccessorImpl.invoke(Unknown Source)
+        at java.lang.reflect.Method.invoke(Unknown Source)
+        at org.springframework.beans.factory.support.SimpleInstantiationStrategy
+.instantiate(SimpleInstantiationStrategy.java:162)
+        ... 20 more
+Caused by: java.lang.RuntimeException: Error starting org.neo4j.kernel.impl.fact
+ory.CommunityFacadeFactory, F:\databaseTest
+        at org.neo4j.kernel.impl.factory.GraphDatabaseFacadeFactory.newFacade(Gr
+aphDatabaseFacadeFactory.java:143)
+        at org.neo4j.kernel.impl.factory.CommunityFacadeFactory.newFacade(Commun
+ityFacadeFactory.java:43)
+        at org.neo4j.kernel.impl.factory.GraphDatabaseFacadeFactory.newFacade(Gr
+aphDatabaseFacadeFactory.java:108)
+        at org.neo4j.graphdb.factory.GraphDatabaseFactory.newDatabase(GraphDatab
+aseFactory.java:129)
+        at org.neo4j.graphdb.factory.GraphDatabaseFactory$1.newDatabase(GraphDat
+abaseFactory.java:117)
+        at org.neo4j.graphdb.factory.GraphDatabaseBuilder.newGraphDatabase(Graph
+DatabaseBuilder.java:185)
+        at org.neo4j.graphdb.factory.GraphDatabaseFactory.newEmbeddedDatabase(Gr
+aphDatabaseFactory.java:79)
+        at org.neo4j.ogm.drivers.embedded.driver.EmbeddedDriver.configure(Embedd
+edDriver.java:98)
+        ... 36 more
+Caused by: org.neo4j.kernel.lifecycle.LifecycleException: Component 'org.neo4j.k
+ernel.recovery.Recovery@656ab2c' failed to initialize. Please see attached cause
+ exception.
+        at org.neo4j.kernel.lifecycle.LifeSupport$LifecycleInstance.init(LifeSup
+port.java:434)
+        at org.neo4j.kernel.lifecycle.LifeSupport.init(LifeSupport.java:66)
+        at org.neo4j.kernel.lifecycle.LifeSupport.start(LifeSupport.java:102)
+        at org.neo4j.kernel.NeoStoreDataSource.start(NeoStoreDataSource.java:600
+)
+        at org.neo4j.kernel.lifecycle.LifeSupport$LifecycleInstance.start(LifeSu
+pport.java:452)
+        at org.neo4j.kernel.lifecycle.LifeSupport.start(LifeSupport.java:111)
+        at org.neo4j.kernel.impl.transaction.state.DataSourceManager.start(DataS
+ourceManager.java:112)
+        at org.neo4j.kernel.lifecycle.LifeSupport$LifecycleInstance.start(LifeSu
+pport.java:452)
+        at org.neo4j.kernel.lifecycle.LifeSupport.start(LifeSupport.java:111)
+        at org.neo4j.kernel.impl.factory.GraphDatabaseFacadeFactory.newFacade(Gr
+aphDatabaseFacadeFactory.java:139)
+        ... 43 more
+Caused by: java.lang.IllegalArgumentException: Unrecognized log entry version -8
+ and logHeaderFormatVersion -1. At position LogPosition{logVersion=0, byteOffset
+=1044} and entry version null
+        at org.neo4j.kernel.impl.transaction.log.entry.LogEntryVersion.byVersion
+(LogEntryVersion.java:263)
+        at org.neo4j.kernel.impl.transaction.log.entry.VersionAwareLogEntryReade
+r.readLogEntry(VersionAwareLogEntryReader.java:91)
+        at org.neo4j.kernel.impl.transaction.log.LogEntryCursor.next(LogEntryCur
+sor.java:54)
+        at org.neo4j.kernel.recovery.LatestCheckPointFinder.find(LatestCheckPoin
+tFinder.java:77)
+        at org.neo4j.kernel.recovery.PositionToRecoverFrom.apply(PositionToRecov
+erFrom.java:53)
+        at org.neo4j.kernel.recovery.DefaultRecoverySPI.getPositionToRecoverFrom
+(DefaultRecoverySPI.java:135)
+        at org.neo4j.kernel.recovery.Recovery.init(Recovery.java:72)
+        at org.neo4j.kernel.lifecycle.LifeSupport$LifecycleInstance.init(LifeSup
+port.java:424)
+        ... 52 more
